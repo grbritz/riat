@@ -15,6 +15,8 @@
 @import "bootstrap";
 
 $action-color : #4682e9;
+$link-blue : #008cba;
+
 
 body {
 	background-color: #fafafa;
@@ -38,6 +40,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .green {
 	color: #579949;
+}
+
+a {
+	color:$link-blue;
 }
 
 
@@ -151,6 +157,21 @@ form {
 .table {
 	margin: 20px 0;
 }
+
+span.entity {
+	color: $link-blue;
+	text-decoration:underline;
+}
+
+span.relation {
+	&:before, &:after {
+		content: "\""
+	}
+
+	font-variant: small-caps;
+	font-weight:500;
+}
+
 
 /************************************************************************************************
 Distant Supervision Experiments

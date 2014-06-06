@@ -1,7 +1,7 @@
 <div class="container" id="distant-supervision-experiment">
 	<div class="row">
 		<div class="col-md-12">
-			<h2>Sentence <%= @sentence.id %></h2>
+			<h2>Sentence <%= @sentence.to_param %></h2>
 			<p class="sentence"><%= @sentence.sentence %></p>
 			<%= form_tag(@targetRoute, :method => :post) do %>
 			<h3>Does the sentence express the following facts?</h3>

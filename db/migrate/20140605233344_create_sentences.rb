@@ -3,7 +3,7 @@ class CreateSentences < ActiveRecord::Migration
     create_table :sentences, :id => false do |t|
       t.integer :sentence_id
       t.integer :dataset_id
-      t.string :sentence
+      t.text :sentence
       t.timestamps
     end
   end

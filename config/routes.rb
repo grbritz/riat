@@ -1,5 +1,9 @@
 Riat::Application.routes.draw do
 
+  # TODO: not sure if needed yet
+  # From Composite-Primary-Keys wiki
+  #map.connect ‘:controller/:action/:id’, :id => /\w+(,\w+)*/
+
   get 'distant_supervision1/login' => 'distant_supervision1#login'
   get 'distant_supervision1/tutorial-1' => 'distant_supervision1#tutorial1'
   get 'distant_supervision1/tutorial-2' => 'distant_supervision1#tutorial2'

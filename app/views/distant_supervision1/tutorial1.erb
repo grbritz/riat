@@ -3,44 +3,28 @@
 		<div class="row">
 			<div class="lg-col-12">
 				<h1>Your Task</h1>
-				<p>You are helping us train our system to know which facts are present in sentences. We will present you with a series of sentences and a list of facts associated with each sentence. Your job is to indicate which of the facts listed are actually expressed by the sentence. </p>
+				<p>You are going to help train our system so that it can understand which <strong><em>facts</em></strong> are expressed in English sentences. We are going to present you with a series of sentences and a list of facts that we think might be in that sentence. Your job is to do two things:</p>
+				<ol>
+					<li>Annotate if the facts are expressed by the sentence.</li>
+					<li>Determine if we used a good pattern to find each fact.</li>
+				</ol>
+				<h2>What to Look For</h2>
+				<h4>Are the facts present?</h4>
+				<p>Consider the following sentence:</p>
 
-				<h3>What is a fact</h3>
-				<p>We are looking at facts that represent relations between two entities. Relations describe how to entities are related, e.g. Bill Gates is the <em>founder</em> of Microsoft, Barack Obama is the <em>president</em> of the United States, and Bill Clinton is of the <em>nationality</em> American (or United States).</p>
-				<h3>What you are looking for</h3>
-				<p>We have a lot of facts that we know are true, and we have a lot of sentences that may or may not actually express those facts. We need your help to find out which facts are actually expressed.</p>
-					<p><strong>For Example:</strong></p>
-					<p>Bill Clinton, former U.S president, spoke at a conference on national debt last week.</p>
-					<table class="table">
-						<tr>
-							<th>Entity 1</th>
-							<th>Relation</th>
-							<th>Entity 2</th>
-						</tr>
-						<tr>
-							<td>Bill Clinton</td>
-							<td>/people/person/nationality</td>
-							<td>U.S.</td>
-						</tr>
-					</table>
-				<p>Does this sentence express this fact? That is that Bill Clinton has a nationality of United States? In this example, the correct answer is <strong>yes</strong>. If someone was a president of the country, they must have the nationality of that country.</p>
+				<blockquote><span class="entity">Bill Clinton</span>, former <span class="entity">U.S.</span> President, spoke at a conference on national debt last week.</blockquote>
+				<p>I've marked the two entities we care about in this text. In this case, we want to know if the fact <span class="relation">Bill Clinton <em>has nationality</em> U.S.</span> is expressed. Since the sentence says that Bill Clinton was a former U.S. president, we can infer that he must have the nationality of United States. So we would say that this sentence expresses this fact. </p>
 
-				<p><strong>Another Example:</strong></p>
-				<p>Michelle Obama spoke at the U.S. farmer's convention on sustainable farming last week.</p>
-				<table class="table">
-						<tr>
-							<th>Entity 1</th>
-							<th>Relation</th>
-							<th>Entity 2</th>
-						</tr>
-						<tr>
-							<td>Michelle Obama</td>
-							<td>/people/person/nationality</td>
-							<td>U.S.</td>
-						</tr>
-					</table>
+				<h4>Is the Pattern Good?</h4>
+				<p>While our system is learning, it makes patterns based upon the structure of the sentences it looks at. It uses those patterns to try to find more facts. Your annotations will help our system learn which patterns are good, and which are bad. Consider this sentence:</p>
+				<blockquote>Zambian President <span class="entity">Levy Mwanawasa</span> has admitted the challenge <span class="entity">Zambia</span> faces in choosing between the Southern African Development Community (SADC) and the Common Market for Eastern and Southern Africa (COMESA) , according Sunday Mail.</blockquote>
+				<p>Following the above logic, the relation <span class="relation">Levy Mwanawasa <em>has nationality</em> Zambia</span> is true, but is our system using a good pattern figure that out?</p>
+				<p>Our system thinks that the second mention of Zambia is the one that it should use to make a pattern. If we removed "Zambian President" from the beginning of this sentence, would you still know that Levy Mwanawasa was Zambian only from reading this sentence? No.</p>
 
-				<p>Does this sentence express this fact? That is that Michelle Obama has a nationality of United States? In this example, the correct answer is <strong>no</strong>. While we know that Michelle Obama is a U.S. citizen, this sentence does not imply that. This sentence only tells us that she was speaking at a convention of some U.S. based organization.</p>
+				<p>In this circumstance, we would say that the fact is expressed, but the pattern is bad. </p>
+				<p><a href="" class="btn btn-primary">Continue</a></p>
+
+				
 
 			</div>
 		</div>
