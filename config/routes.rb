@@ -1,4 +1,10 @@
 Riat::Application.routes.draw do
+
+  get 'distant_supervision1/login' => 'distant_supervision1#login'
+  get 'distant_supervision1/tutorial-1' => 'distant_supervision1#tutorial1'
+  get 'distant_supervision1/tutorial-2' => 'distant_supervision1#tutorial2'
+  get 'distant_supervision1/tutorial-3' => 'distant_supervision1#tutorial3'
+  get 'distant_supervision1/task' => 'distant_supervision1#task'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

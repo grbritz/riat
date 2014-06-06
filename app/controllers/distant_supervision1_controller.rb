@@ -1,6 +1,6 @@
 class DistantSupervision1Controller < ApplicationController
 
-  def show id = nil
+  def task id = nil
   	if(id.nil?)
   		@sentence = Sentence.includes("relations").where(relations: {in_sentence:nil}).take
   	else
@@ -17,8 +17,21 @@ class DistantSupervision1Controller < ApplicationController
   	redirect_to action: 'show'
   end
 
-  def tutorial1
-  	@sentence = Sentence.find(34)
+  def login 
+
   end
+
+  def tutorial2
+
+  end
+
+  def tutorial3
+
+  end
+
+  def tutorial1
+  	
+  end
+
 
 end
