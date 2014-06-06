@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: distant_gold_development
+  database: riat_development
   pool: 5
   username: postgres
   password: postgres1247
@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: distant_gold_test
+  database: riat_test
   pool: 5
   username: postgres
   password: postgres1247
@@ -54,7 +54,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: distant_gold_production
+  database: riat_production
   pool: 5
-  username: distant-gold-supervision
+  username: riat-user
   password: testpass

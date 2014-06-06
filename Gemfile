@@ -6,6 +6,10 @@ gem 'rails', '4.0.5'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Composite keys for database relations
+gem 'composite_primary_keys', '>= 6.0.0', '< 7.0.0'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass', '~> 3.1.1.1'

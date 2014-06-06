@@ -18,7 +18,7 @@
 					</tr>
 				</thead>
 				<tbody>
-				<% @sentence.relations.each do |rel| %>
+				<% @sentence.relation_instances.each do |rel| %>
 					<tr>
 						<td class="extent-hover" data-range="<%= rel.extent1_begin %>-<%= rel.extent1_end %>"><%= rel.extent1_text %></td>
 						<td ><%= rel.relation %></td>

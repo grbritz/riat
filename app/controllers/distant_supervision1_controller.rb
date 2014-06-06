@@ -2,10 +2,12 @@ class DistantSupervision1Controller < ApplicationController
 
   def task id = nil
   	if(id.nil?)
-  		@sentence = Sentence.includes("relations").where(relations: {in_sentence:nil}).take
+  		@sentence = Sentence.includes("relation_instances").take
   	else
-  		@sentence = Sentence.includes("relations").find(id)
+  		@sentence = Sentence.includes("relation_instances").find(id)
   	end
+
+  	render template: "layouts/distant_supervision_experiment"
   end
 
   def update
@@ -30,7 +32,7 @@ class DistantSupervision1Controller < ApplicationController
   end
 
   def tutorial1
-  	
+
   end
 
 
