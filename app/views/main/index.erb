@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1>Relation Instance Annotation Tool - RIAT</h1>
+			<p>Welcome to RIAT. RIAT is a tool that uses people to annotate relational instances and is a part of the Information Omnivore project. Select an experiment below to participate in RIAT:</p>
+
+			<ul>
+				<% @datasets.each do |set| %>
+				<li><%= link_to(set.name, set.name + "/index") %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

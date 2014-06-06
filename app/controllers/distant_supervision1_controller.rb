@@ -1,7 +1,7 @@
 class DistantSupervision1Controller < ApplicationController
 
-  def task id = nil
-  	if(id.nil?)
+  def task
+  	if(params[:id].nil?)
   		@sentence = Sentence.includes("relation_instances").take
   	else
   		@sentence = Sentence.includes("relation_instances").find(id)
@@ -19,8 +19,8 @@ class DistantSupervision1Controller < ApplicationController
   	redirect_to action: 'show'
   end
 
-  def login 
-
+  def index
+    render template: "layouts/login"
   end
 
   def tutorial2
@@ -33,6 +33,19 @@ class DistantSupervision1Controller < ApplicationController
 
   def tutorial1
 
+  end
+
+  def login
+    email = params[:email]
+
+    #TODO: Use an actual signup & login system
+    user = (User.where(email: email).count == 0) ? 
+      User.create(email: email) : User.where(email: email)
+
+    
+    if()
+      
+    end
   end
 
 

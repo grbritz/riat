@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.5'
 
@@ -9,6 +11,18 @@ gem 'pg'
 # Composite keys for database relations
 gem 'composite_primary_keys', '>= 6.0.0', '< 7.0.0'
 
+group :development, :test do
+	gem 'rspec-rails', '2.13.1'
+end
+
+group :test do
+	gem 'selenium-webdriver', '2.35.1'
+  	gem 'capybara', '2.1.0'
+end
+
+# Use ActiveModel has_secure_password
+gem 'bcrypt-ruby', '3.1.2'
+# gem 'bcrypt', :require => 'bcrypt', platforms: 'ruby'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
@@ -36,8 +50,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

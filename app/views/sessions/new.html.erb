@@ -1,13 +1,14 @@
+
 <div class="container">
 	<div class="row">
-		<h1 class="text-center">Sign Up</h1>
+		<h1 class="text-center">Sign In</h1>
 		<div class="col-sm-6 col-sm-offset-3">
-			<% if(!@user.nil?) %>
-
-			
+			<% if(flash[:error]) %>
+			<div class="alert bg-danger">
+			<%= flash[:error] %>
+			</div>
 			<% end %>
-			
-			<%= form_for(:user, url: users_path) do |f| %>
+			<%= form_for(:session, url: sessions_path) do |f| %>
 				<div class="form-group">
 					<%= f.label :email %>
 					<%= f.text_field :email, {class: "form-control"} %>
@@ -17,14 +18,12 @@
 				<%= f.password_field :password, {class: "form-control"} %>
 				</div>
 				<div class="form-group">
-				<%= f.label :password_confirmation %>
-				<%= f.password_field :password_confirmation, {class: "form-control"} %>
-				</div>
-				<div class="form-group">
-				<%= f.submit "Create Acct", class: "btn btn-primary" %>
+				<%= f.submit "Sign in", class: "btn btn-primary" %>
 				</div>
 			<% end %>
-			<p>Have an account? <%= link_to("Sign in", "/signin") %></p>
+			<p>New user? <%= link_to("Sign up", "/signup") %></p>
 		 </div> 
+
+
 	</div>
 </div>
