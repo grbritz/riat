@@ -13,6 +13,7 @@ task :dataset_model_import, [:model, :dataset, :delim] => :environment do |task,
   lines.each do |line|
     values = line.strip.split(delim)
     attributes = Hash[keys.zip values]
+    # Add in additional col,val for dataset_id mapping
     attributes.update({dataset_id: datasetId})
     
     args[:model].constantize.create(attributes)
