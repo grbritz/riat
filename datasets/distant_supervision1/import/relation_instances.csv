@@ -1,0 +1,51 @@
+mid1;;extent1_begin;;extent1_end;;extent1_text;;mid2;;extent2_begin;;extent2_end;;extent2_text;;sentence_id;;relation
+/m/0pstz;;153;;173;;Atal Bihari Vajpayee;;/m/03rk0;;131;;137;;Indian;;34;;/people/person/nationality
+/m/0230bc;;117;;126;;Rakhmonov;;/m/07dvs;;76;;86;;Tajikistan;;34;;/people/person/nationality
+/m/06pv0_;;69;;79;;Rafael Hui;;/m/03h64;;123;;137;;Hong  Kong SAR;;157;;/people/person/place_of_birth
+/m/0dxm8r;;25;;40;;Danai Udomchoke;;/m/07f1x;;14;;22;;Thailand;;7411;;/people/person/nationality
+/m/02vm6y1;;109;;132;;Konstantinos Economidis;;/m/035qy;;100;;106;;Greece;;7413;;/people/person/nationality
+/m/0kxrb;;95;;107;;Hamid Karzai;;/m/0jdd;;78;;84;;Afghan;;8685;;/people/person/nationality
+/m/04sj1_;;31;;40;;Eli Broad;;/m/030qb3t;;150;;161;;Los Angeles;;8464;;/people/person/places_lived|/people/place_lived/location
+/m/014d02;;179;;191;;Ma Ying-jeou;;/m/06f32;;101;;107;;Taiwan;;8557;;/people/person/nationality
+/m/014d02;;179;;191;;Ma Ying-jeou;;/m/06f32;;140;;146;;Taiwan;;8557;;/people/person/nationality
+/m/014d02;;88;;100;;Ma Ying-jeou;;/m/06f32;;0;;6;;Taiwan;;7178;;/people/person/nationality
+/m/01qww2;;4;;22;;President Museveni;;/m/07tp2;;132;;139;;Ugandan;;7360;;/people/person/nationality
+/m/022dpx;;22;;41;;Tassos Papadopoulos;;/m/01ppq;;4;;11;;Cypriot;;7829;;/people/person/nationality
+/m/022dpx;;22;;41;;Tassos Papadopoulos;;/m/01ppq;;75;;81;;Cyprus;;7829;;/people/person/nationality
+/m/058ynf;;16;;26;;Dan Halutz;;/m/03spz;;100;;116;;Israel-Hezbollah;;7837;;/people/person/nationality
+/m/0ft68;;70;;100;;President Nursultan Nazarbayev;;/m/047lj;;63;;69;;Kazakh;;8930;;/people/person/nationality
+/m/0kxrb;;158;;170;;Hamid Karzai;;/m/0jdd;;141;;147;;Afghan;;8930;;/people/person/nationality
+/m/0c95kv;;151;;175;;Iftekhar Ahmed Chowdhury;;/m/0162b;;43;;53;;Bangladesh;;7111;;/people/person/nationality
+/m/0c95kv;;151;;175;;Iftekhar Ahmed Chowdhury;;/m/0162b;;115;;126;;Bangladeshi;;7111;;/people/person/nationality
+/m/03p4qd;;76;;91;;Kosuke Kitajima;;/m/03_3d;;0;;5;;Japan;;7138;;/people/person/nationality
+/m/013my_;;47;;66;;President Hu Jintao;;/m/0d05w3;;39;;46;;Chinese;;8004;;/people/person/nationality
+/m/013my_;;47;;66;;President Hu Jintao;;/m/0d05w3;;160;;165;;China;;8004;;/people/person/nationality
+/m/013my_;;47;;66;;President Hu Jintao;;/m/0d05w3;;178;;183;;China;;8004;;/people/person/nationality
+/m/059fck;;10;;23;;Ivan Ljubicic;;/m/01pj7;;0;;7;;Croatia;;7050;;/people/person/nationality
+/m/0230wx;;91;;113;;Prime Minister Hun Sen;;/m/01xbgx;;57;;65;;Cambodia;;9016;;/people/person/nationality
+/m/0230wx;;91;;113;;Prime Minister Hun Sen;;/m/01xbgx;;222;;231;;Cambodian;;9016;;/people/person/nationality
+/m/0418zp;;68;;89;;King Norodom Sihamoni;;/m/01xbgx;;57;;65;;Cambodia;;9016;;/people/person/nationality
+/m/0418zp;;68;;89;;King Norodom Sihamoni;;/m/01xbgx;;222;;231;;Cambodian;;9016;;/people/person/nationality
+/m/02lnpm;;8;;20;;Dwight Yorke;;/m/09lxtg;;31;;50;;Trinidad and Tobago;;8911;;/people/person/nationality
+/m/03gvq8;;23;;34;;Ehud Olmert;;/m/03spz;;88;;94;;Israel;;7542;;/people/person/nationality
+/m/03gvq8;;40;;46;;Olmert;;/m/03spz;;103;;109;;Israel;;8794;;/people/person/nationality
+/m/021275;;71;;91;;Recep Tayyip Erdogan;;/m/01znc_;;48;;55;;Turkish;;8794;;/people/person/nationality
+/m/08xh6c;;111;;124;;President Roh;;/m/06qd3;;98;;110;;South Korean;;7215;;/people/person/nationality
+/m/08xh6c;;121;;133;;Roh Moo-Hyun;;/m/06qd3;;98;;110;;South Korean;;7215;;/people/person/nationality
+/m/0kxrb;;79;;91;;Hamid Karzai;;/m/0jdd;;62;;68;;Afghan;;9227;;/people/person/nationality
+/m/0kxrb;;0;;6;;Karzai;;/m/0jdd;;12;;23;;Afghanistan;;9232;;/people/person/nationality
+/m/0kxrb;;0;;6;;Karzai;;/m/0jdd;;133;;144;;Afghanistan;;9232;;/people/person/nationality
+/m/04p2n2;;20;;37;;Karolos Papoulias;;/m/035qy;;13;;19;;Greece;;8742;;/people/person/nationality
+/m/07q13;;133;;144;;Thabo Mbeki;;/m/0hzlz;;148;;160;;South Africa;;7803;;/people/person/nationality
+/m/0bsfy;;195;;208;;Robert Mugabe;;/m/088q4;;212;;220;;Zimbabwe;;7803;;/people/person/nationality
+/m/07q13;;0;;15;;President Mbeki;;/m/0hzlz;;59;;71;;South Africa;;7804;;/people/person/nationality
+/m/01_5l6;;45;;58;;Joseph Kabila;;/m/088xp;;0;;28;;Democratic Republic of Congo;;7807;;/people/person/nationality
+/m/01_5l6;;45;;58;;Joseph Kabila;;/m/088xp;;0;;28;;Democratic Republic of Congo;;7807;;/people/person/places_lived|/people/place_lived/location
+/m/01_5l6;;45;;58;;Joseph Kabila;;/m/088xp;;30;;33;;DRC;;7807;;/people/person/nationality
+/m/01_5l6;;45;;58;;Joseph Kabila;;/m/088xp;;30;;33;;DRC;;7807;;/people/person/places_lived|/people/place_lived/location
+/m/01jqsn;;52;;71;;Micheline Calmy-Rey;;/m/06mzp;;29;;34;;Swiss;;6978;;/people/person/nationality
+/m/021v2z;;8;;27;;Juan Carlos Ferrero;;/m/06mkj;;0;;5;;Spain;;9011;;/people/person/nationality
+/m/01pt2r;;72;;83;;Evo Morales;;/m/0165v;;53;;61;;Bolivian;;9037;;/people/person/nationality
+/m/01pt2r;;72;;83;;Evo Morales;;/m/0165v;;132;;139;;Bolivia;;9037;;/people/person/nationality
+/m/0dlzm6;;171;;190;;Anastasiya Yakimova;;/m/0163v;;194;;201;;Belarus;;7729;;/people/person/nationality
+/m/0h7c_l;;131;;144;;Rafael Correa;;/m/02k1b;;0;;7;;Ecuador;;8084;;/people/person/nationality
