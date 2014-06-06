@@ -1,11 +1,11 @@
-<% if @errors.any? %>
-  <div id="error_explanation">
-    <div class="alert alert-error">
-      The form contains <%= pluralize(@errors.count, "error") %>.
+<% if errors.any? %>
+  <div id="error_explanation" class="alert bg-danger">
+    <div>
+      Your submission contains <%= pluralize(errors.count, "error") %>:
     </div>
     <ul>
-    <% @errors.full_messages.each do |msg| %>
-      <li>* <%= msg %></li>
+    <% errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
     <% end %>
     </ul>
   </div>

@@ -6,8 +6,6 @@ Riat::Application.routes.draw do
   #
 
   root to: 'main#index'
-
-  get 'distant_supervision1/login' => 'distant_supervision1#login'
   get 'distant_supervision1/tutorial-1' => 'distant_supervision1#tutorial1'
   get 'distant_supervision1/tutorial-2' => 'distant_supervision1#tutorial2'
   get 'distant_supervision1/tutorial-3' => 'distant_supervision1#tutorial3'

@@ -20,7 +20,7 @@ class DistantSupervision1Controller < ApplicationController
   end
 
   def index
-    render template: "layouts/login"
+    render 'distant_supervision1/tutorial1'
   end
 
   def tutorial2
@@ -34,19 +34,4 @@ class DistantSupervision1Controller < ApplicationController
   def tutorial1
 
   end
-
-  def login
-    email = params[:email]
-
-    #TODO: Use an actual signup & login system
-    user = (User.where(email: email).count == 0) ? 
-      User.create(email: email) : User.where(email: email)
-
-    
-    if()
-      
-    end
-  end
-
-
 end

@@ -3,8 +3,7 @@
 		<h1 class="text-center">Sign Up</h1>
 		<div class="col-sm-6 col-sm-offset-3">
 			<% if(!@user.nil?) %>
-
-			
+			<%= render 'shared/error_messages', errors: @user.errors %>
 			<% end %>
 			
 			<%= form_for(:user, url: users_path) do |f| %>

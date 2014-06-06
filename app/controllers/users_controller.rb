@@ -23,21 +23,13 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    # @user = User.new({email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation]})
-
     @user = User.new(user_params)
     if @user.save
       sign_in(@user)
-
       redirect_to "/"
     else
       render 'new'
     end
-    # user = User.new(user_params)
-
-    
-
-
   end
 
   # PATCH/PUT /users/1
