@@ -1,0 +1,174 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import "bootstrap";
+
+$action-color : #4682e9;
+
+body {
+	background-color: #fafafa;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	letter-spacing: -.01em;
+}
+
+.red {
+	color: #b6111f;
+}
+
+.yellow {
+	color: #dec621;
+}
+
+.green {
+	color: #579949;
+}
+
+
+.form-error {
+	color: #ca2832;
+	font-size: rem-calc(13);
+	padding: 2px 0 4px 0;
+	display: block;
+}
+
+.section {
+
+	img {
+		margin: 10px 0;
+	}
+
+	h2 {
+		margin-bottom: 25px;
+	}
+
+	width: 100%;
+	padding: 40px 0;
+	&.darker {
+		background-color: #eeeeee;
+	}
+	&.steps {
+		background-color: #37638e;
+		color: #efefef;
+		text-align: center;
+
+		hr {
+			width: 90%;
+			margin: 30px 5%;
+
+		}
+
+		div.hr {
+			width: 90%;
+			margin: 0 5%;
+			border-bottom: 1px solid #6497ab;
+			margin-bottom: 20px;
+			height: 30px;
+			
+			clear: both;
+
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			color: #efefef;
+			text-align: center;
+		}
+
+		img {
+			width: 100px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+
+	}
+	&.bottom {
+		background-color: #404040;
+		padding: 20px 0;
+		h1, h2, h3, h4, h5, h6 {
+			color: white;
+		}
+		color: #bebebe;
+		p {
+			line-height: 1.2em;
+			font-size: rem-calc(13px);
+		}
+		
+	}
+
+}
+
+p.q {
+	margin-bottom: 3px;
+	font-weight: bolder;
+}
+
+.infoheader {
+	height: 100%;
+	
+}
+
+.header {
+	position: relative;
+	height: 90%;
+	background-size: cover;
+	color: white;
+	background-position: 50% 50%;
+	h1, h2, h3, h4, h5, h6 {
+		color: white;
+	}
+
+	margin-bottom: 40px;
+
+	.toptext {
+		margin-top: 3%;
+	}
+}
+
+form {
+	textarea {
+		resize: none;
+		height: 3em;
+	}
+}
+
+.table {
+	margin: 20px 0;
+}
+
+/************************************************************************************************
+Distant Supervision Experiments
+************************************************************************************************/
+#distant-supervision-experiments {
+	.sentence {
+		span.extent-hover {
+			background:blue;
+			color:#fff;
+			
+		}
+	}
+
+	td.extent-hover {
+		cursor:pointer;
+	}
+
+	.darker {
+		background:#eee;
+	}
+}

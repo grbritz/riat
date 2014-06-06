@@ -1,28 +1,13 @@
-== README
+### Distant Gold Supervision Data Improvement
+The purpose of this project is to see if people can accurately label if facts are expressed on a sentential level. Users of this system will verify the facts we are using for distant supervision.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to get it set up
+For the local system to work, create a PostgreSQL database that matches that found on config/database.yml
+Run bundle exec rake db:create
+Run "bundle exec rake db:migrate" to create database schema
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Move data experimental data to appropriate directory. In the example below I've placed it into tmp/data/
+Note: because there are many delimeters inside of the sentences in the sentence csv file, I used ;; as the 
+delimeter for this file when I generated it
+Run rake csv_model_import["tmp/data/sentid-sentences.csv",Sentence,";;"]
+Run rake csv_model_import["tmp/data/extracted-training-rels.csv",Relation,nil]

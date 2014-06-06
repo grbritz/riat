@@ -1,6 +1,6 @@
 #lib/tasks/new_dataset
 
-desc ""
+desc "Creates local file structure for a new dataset; Generates default controller for an experiment with that dataset"
 task :new_dataset, [:name] => :environment do |task, args|
 	dataset = args[:name].underscore
 	system "mkdir", "datasets/" + dataset
@@ -9,6 +9,7 @@ task :new_dataset, [:name] => :environment do |task, args|
 	system "mkdir", "datasets/" + dataset + "/results"
 
 	Dataset.create({name: dataset})
-
 	p "Created dataset " + dataset
+
+	system "rails generate controller " + dataset
 end

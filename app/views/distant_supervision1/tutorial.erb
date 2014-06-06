@@ -1,0 +1,52 @@
+<div class="section">
+	<div class="container">
+		<div class="row">
+			<div class="lg-col-12">
+				<h1>Your Task</h1>
+				<p>You are helping us train our system to know which facts are present in sentences. We will present you with a series of sentences and a list of facts associated with each sentence. Your job is to indicate which of the facts listed are actually expressed by the sentence. </p>
+
+				<h3>What is a fact</h3>
+				<p>We are looking at facts that represent relations between two entities. Relations describe how to entities are related, e.g. Bill Gates is the <em>founder</em> of Microsoft, Barack Obama is the <em>president</em> of the United States, and Bill Clinton is of the <em>nationality</em> American (or United States).</p>
+				<h3>What you are looking for</h3>
+				<p>We have a lot of facts that we know are true, and we have a lot of sentences that may or may not actually express those facts. We need your help to find out which facts are actually expressed.</p>
+					<p><strong>For Example:</strong></p>
+					<p>Bill Clinton, former U.S president, spoke at a conference on national debt last week.</p>
+					<table class="table">
+						<tr>
+							<th>Entity 1</th>
+							<th>Relation</th>
+							<th>Entity 2</th>
+						</tr>
+						<tr>
+							<td>Bill Clinton</td>
+							<td>/people/person/nationality</td>
+							<td>U.S.</td>
+						</tr>
+					</table>
+				<p>Does this sentence express this fact? That is that Bill Clinton has a nationality of United States? In this example, the correct answer is <strong>yes</strong>. If someone was a president of the country, they must have the nationality of that country.</p>
+
+				<p><strong>Another Example:</strong></p>
+				<p>Michelle Obama spoke at the U.S. farmer's convention on sustainable farming last week.</p>
+				<table class="table">
+						<tr>
+							<th>Entity 1</th>
+							<th>Relation</th>
+							<th>Entity 2</th>
+						</tr>
+						<tr>
+							<td>Michelle Obama</td>
+							<td>/people/person/nationality</td>
+							<td>U.S.</td>
+						</tr>
+					</table>
+
+				<p>Does this sentence express this fact? That is that Michelle Obama has a nationality of United States? In this example, the correct answer is <strong>no</strong>. While we know that Michelle Obama is a U.S. citizen, this sentence does not imply that. This sentence only tells us that she was speaking at a convention of some U.S. based organization.</p>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section darker">
+	
+	<%= render file: "/app/views/annotate_experiment/show.html.erb" %>
+</div>
