@@ -37,7 +37,7 @@ namespace :dataset do
 
   desc "Imports existing datasets in the filesystem"
   task :import_existing => :environment do |task, args|
-    datasets = Dir.glob(Rails.root.join("datasets").to_s)
+    datasets = Dir.glob(Rails.root.join("datasets", "*").to_s)
     datasets.each do |dataset_path|
       dataset = File.basename(dataset_path)
       Dataset.create({name: dataset})
