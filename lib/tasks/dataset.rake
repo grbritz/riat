@@ -42,6 +42,7 @@ namespace :dataset do
       dataset = File.basename(dataset_path)
       Dataset.create({name: dataset})
       system "rake", "dataset:import_model[#{dataset},Sentence,;;]"
+      system "rake", "dataset:import_model[#{dataset},RelationInstance,;;]"
     end
 
   end

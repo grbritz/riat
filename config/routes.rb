@@ -6,9 +6,6 @@ Riat::Application.routes.draw do
   #
   get ':controller(/:action(/:id))'
   root to: 'main#index'
-  get 'distant_supervision1/tutorial-1' => 'distant_supervision1#tutorial1'
-  get 'distant_supervision1/tutorial-2' => 'distant_supervision1#tutorial2'
-  get 'distant_supervision1/tutorial-3' => 'distant_supervision1#tutorial3'
   get 'distant_supervision1/task' => 'distant_supervision1#task'
   post 'distant_supervision1/update' => 'distant_supervision1#update'
   
