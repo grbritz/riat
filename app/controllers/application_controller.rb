@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
  protected 
  	def require_logged_in
  		if(current_user.nil?)
- 			flash.now[:message] = {message: "You must be logged in to visit that page", display_type: "danger" }
+ 			flash[:message] = {message: "You must be logged in to visit that page", display_type: "danger" }
 			redirect_to "/signin"
 		end
  	end
