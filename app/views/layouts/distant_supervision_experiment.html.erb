@@ -1,0 +1,74 @@
+
+<div class="container" id="distant-supervision-experiment">
+	<div class="row" style="height:50px"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<blockquote class="sentence"><%= @current_sentence.sentence %></blockquote>
+			<%= form_tag(@target_route, :method => :post) do %>
+			<h3>Does the sentence express the following facts?</h3>
+			<h4 class="subheader"><small>* Hover over entities to see where they are located in the sentence</small></h4>
+			<% if(!@annotations.nil?) %>
+			<%= render 'shared/error_messages', errors: flatten_errors(@annotations)  %>
+			<% end %>
+			<%= render 'shared/flash_message' %>
+			<div class="row column-headings">
+				<div class="col-md-6">
+					<h5>Fact Instance</h5>
+				</div>
+				<div class="col-md-4">
+					<h5>Is it Expressed?</h5>
+				</div>
+				<div class="col-md-2">
+					<h5>Is a good pattern?</h5>
+				</div>
+			</div>
+			<hr />
+			<ol class="relation-instances">
+				<% @current_sentence.relation_instances.each do |rel| %>
+				<li>
+					<div class="row">
+						<div class="col-md-6">
+							<span class="relation"><span class="entity extent-hover" data-range="<%= rel.extent1_begin %>-<%= rel.extent1_end %>"><%= rel.extent1_text %></span> <em><%= pretty_relation(rel.relation, rel.dataset_id) %></em> <span class="entity extent-hover" data-range="<%= rel.extent2_begin%>-<%= rel.extent2_end %>"><%= rel.extent2_text %></span></span>
+						</div>
+						<div class="col-md-4">
+							<div class="row">
+								<div class="btn-group toggle-element" data-toggle_show="<%= "ambiguity_".concat(rel.id.to_s) %>" data-toggle="buttons" data-toggle_value="2">
+									<label class='btn btn-primary' for='<%= "annotation_".concat(rel.id.to_s).concat("_1") %>'>
+										<%= radio_button_tag("annotation[".concat(rel.id.to_s).concat("]"), 1) %> Yes
+									</label>
+									<label class='btn btn-primary' for='<%= "annotation_".concat(rel.id.to_s).concat("_0") %>'>
+										<%= radio_button_tag("annotation[".concat(rel.id.to_s).concat("]"), 0) %> No 
+									</label>
+									<label class='btn btn-primary ambiguity-toggle' for='<%= "annotation_".concat(rel.id.to_s).concat("_2") %>'>
+										<%= radio_button_tag("annotation[".concat(rel.id.to_s).concat("]"), 2) %> Not sure
+									</label>
+								</div>
+							</div>
+							<div class="row hide <%= "ambiguity_".concat(rel.id.to_s) %>">
+								<%= label_tag("ambiguity_reason[".concat(rel.id.to_s).concat("]"), "Reason" ) %><br>
+								<%= text_area_tag("ambiguity_reason[".concat(rel.id.to_s).concat("]")) %>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-primary" for='<%= "is_good_pattern_".concat(rel.id.to_s).concat("_1") %>'>
+									<%= radio_button_tag("is_good_pattern[".concat(rel.id.to_s).concat("]"), 1) %> Yes
+								</label>
+								<label class="btn btn-primary" for='<%= "is_good_pattern_".concat(rel.id.to_s).concat("_0") %>'>
+									<%= radio_button_tag("is_good_pattern[".concat(rel.id.to_s).concat("]"), 0) %> No
+								</label>
+							</div>
+						</div>
+					</div>
+				</li>
+				<% end %>
+			</ol>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-1">
+				<input type="submit" class="btn btn-primary" value="Submit" />
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

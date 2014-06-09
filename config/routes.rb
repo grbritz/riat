@@ -10,6 +10,7 @@ Riat::Application.routes.draw do
   get 'distant_supervision1/tutorial-2' => 'distant_supervision1#tutorial2'
   get 'distant_supervision1/tutorial-3' => 'distant_supervision1#tutorial3'
   get 'distant_supervision1/task' => 'distant_supervision1#task'
+  post 'distant_supervision1/update' => 'distant_supervision1#update'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users

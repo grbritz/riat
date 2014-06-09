@@ -3,11 +3,7 @@
 	<div class="row">
 		<h1 class="text-center">Sign In</h1>
 		<div class="col-sm-6 col-sm-offset-3">
-			<% if(flash[:error]) %>
-			<div class="alert bg-danger">
-			<%= flash[:error] %>
-			</div>
-			<% end %>
+			<%= render "shared/flash_message" %>
 			<%= form_for(:session, url: sessions_path) do |f| %>
 				<div class="form-group">
 					<%= f.label :email %>

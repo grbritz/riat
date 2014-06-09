@@ -13,7 +13,8 @@ class CreateRelationInstances < ActiveRecord::Migration
       t.string :extent2_text, limit:200
       t.string :relation, limit:200
 
-      t.timestamps
+      t.index :dataset_id
+      t.index :sentence_id
     end
   end
 end

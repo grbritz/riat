@@ -1,0 +1,7 @@
+{
+	"relations-pretty" : {
+		"/people/person/nationality" : "has nationality",
+		"/people/person/places_lived|/people/place_lived/location" : "has lived in",
+		"/people/person/place_of_birth" : "was born in"
+	}
+}

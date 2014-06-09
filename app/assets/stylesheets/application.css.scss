@@ -166,9 +166,10 @@ blockquote {
 span.entity {
 	color: $link-blue;
 	text-decoration:underline;
+	cursor:	pointer;
 }
 
-span.relation {
+span.relation-instance {
 	&:before, &:after {
 		content: "\""
 	}
@@ -177,22 +178,49 @@ span.relation {
 	font-weight:500;
 }
 
+ol.relation-instances {
+	li {
+		margin-bottom: 10px;
+
+		.row {
+			// display:inline-block;
+			margin-left:0px;
+			margin-right:0px;
+			// width:100%;
+		}
+	}	
+}
+
+
 
 /************************************************************************************************
 Distant Supervision Experiments
 ************************************************************************************************/
-#distant-supervision-experiments {
+#distant-supervision-experiment {
+
+	.column-headings {
+		margin-left:40px;
+	}
+
+	hr {
+		margin-top:5px;
+		margin-bottom:10px;
+		border-top:1px solid #ccc;
+	}
+
+
 	.sentence {
 		span.extent-hover {
 			background:blue;
 			color:#fff;
 			
 		}
+
+		span.entity {
+			font-weight: bold;
+		}
 	}
 
-	td.extent-hover {
-		cursor:pointer;
-	}
 
 	.darker {
 		background:#eee;

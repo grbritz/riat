@@ -11,53 +11,75 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
 $(document).ready(function(){
 	var modules = {
 		distantSupervisionExperiment : function(){
-			var HTML_NAMESPACE = "#distant-supervision-experiment";
-			var sentence = $(".sentence").text().split(/\\"/).join("\"");
-			$(HTML_NAMESPACE + " .sentence").html(sentenceToSpans(sentence));
+				$('.btn').button();
+
+				var HTML_NAMESPACE = "#distant-supervision-experiment";
+				var sentence = $(HTML_NAMESPACE + " .sentence").text().split(/\\"/).join("\"");
+				$(HTML_NAMESPACE + " .sentence").html(sentenceToSpans(sentence));
+				
+				$(HTML_NAMESPACE + " .extent-hover").hover(function(){
+					sentTokSpansForEntity($(this)).forEach(function(ele){
+						ele.addClass("entity");
+					});
+				}, function(){
+					sentTokSpansForEntity($(this)).forEach(function(ele){
+						ele.removeClass("entity");
+					});
+				});
+
+				function sentenceToSpans(sentence) {
+					return textToTokSpans(sentence).map(function(tokObj) {
+						return '<span data-range="'+ tokObj.range +'">'+tokObj.tok + '</span>';
+					}).join(" ");
+				}
+
+				function textToTokSpans(text, charStart) {
+					var charcount = (charStart) ? charStart : 0;
+					return text.split(/[\ .,;:()']/).map(function(tok) {
+						var obj = {
+							range : charcount + "-" + (charcount+tok.length),
+							tok : tok
+						};
+						charcount += tok.length + 1;
+						return obj;
+					});
+				}
+
+				function sentTokSpansForEntity(element) {
+					var tokens = textToTokSpans(element.text(), parseInt(element.data("range").split("-")[0]));
+					return tokens.map(function(tokObj) {
+						return $(HTML_NAMESPACE + ' .sentence span[data-range="' + tokObj.range +'"]');
+					});
+				}
+
+				// Showing the ambiguity reason box when "not sure" is pressed
+				$(HTML_NAMESPACE + " .toggle-element .btn").click(function(e){
+					e.stopImmediatePropagation();
+					$(this).button('toggle');
+					
+					var group = $(this).closest(".toggle-element");
+					var eleToToggle = $(HTML_NAMESPACE + " ." + group.data("toggle_show"));
+
+					console.log("Checked Ele:");
+					console.log(group.find("input:checked"));
+					console.log("Radio val: " + group.find("input:checked").val());
+
+					if(group.find("input:checked").val() == group.data("toggle_value")) {
+						eleToToggle.removeClass("hide");
+					}
+					else {
+						eleToToggle.addClass("hide");
+					}
+				});
 			
-			$(HTML_NAMESPACE + " .extent-hover").hover(function(){
-				sentTokSpansForEntity($(this)).forEach(function(ele){
-
-					ele.addClass("extent-hover");
-				});
-			}, function(){
-				sentTokSpansForEntity($(this)).forEach(function(ele){
-					ele.removeClass("extent-hover");
-				});
-			});
-
-			function sentenceToSpans(sentence) {
-				return textToTokSpans(sentence).map(function(tokObj) {
-					return '<span data-range="'+ tokObj.range +'">'+tokObj.tok + '</span>';
-				}).join(" ");
-			}
-
-			function textToTokSpans(text, charStart) {
-				var charcount = (charStart) ? charStart : 0;
-				return text.split(/[\ .,;:()']/).map(function(tok) {
-					var obj = {
-						range : charcount + "-" + (charcount+tok.length),
-						tok : tok
-					};
-					charcount += tok.length + 1;
-					return obj;
-				});
-			}
-
-			function sentTokSpansForEntity(element) {
-				var tokens = textToTokSpans(element.text(), parseInt(element.data("range").split("-")[0]));
-
-
-				return tokens.map(function(tokObj) {
-					return $('span[data-range="' + tokObj.range +'"]');
-				});
-			}
 		}
 	};
 
