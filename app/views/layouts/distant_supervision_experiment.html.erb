@@ -6,9 +6,6 @@
 			<%= form_tag(@target_route, :method => :post) do %>
 			<h3>Does the sentence express the following facts?</h3>
 			<h4 class="subheader"><small>* Hover over entities to see where they are located in the sentence</small></h4>
-			<% if(!@annotations.nil?) %>
-			<%= render 'shared/error_messages', errors: flatten_errors(@annotations)  %>
-			<% end %>
 			<%= render 'shared/flash_message' %>
 			<div class="row column-headings">
 				<div class="col-md-6">
@@ -44,7 +41,7 @@
 								</div>
 							</div>
 							<div class="row hide <%= "ambiguity_".concat(rel.id.to_s) %>">
-								<%= label_tag("ambiguity_reason[".concat(rel.id.to_s).concat("]"), "Reason" ) %><br>
+								<%= label_tag("ambiguity_reason[".concat(rel.id.to_s).concat("]"), "Reason" ) %> <span class="tiny text-danger">(required)</span><br>
 								<%= text_area_tag("ambiguity_reason[".concat(rel.id.to_s).concat("]")) %>
 							</div>
 						</div>

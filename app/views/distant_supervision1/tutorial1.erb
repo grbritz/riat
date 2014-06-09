@@ -9,18 +9,23 @@
 					<li>Determine if we used a good pattern to find each fact.</li>
 				</ol>
 				<h2>What to Look For</h2>
-				<h4>Are the facts present?</h4>
-				<p>Consider the following sentence:</p>
-
-				<blockquote><span class="entity">Bill Clinton</span>, former <span class="entity">U.S.</span> President, spoke at a conference on national debt last week.</blockquote>
-				<p>I've marked the two entities we care about in this text. In this case, we want to know if the fact <span class="relation">Bill Clinton <em>has nationality</em> U.S.</span> is expressed. Since the sentence says that Bill Clinton was a former U.S. president, we can infer that he must have the nationality of United States. So we would say that this sentence expresses this fact. </p>
-
-				<h4>Is the Pattern Good?</h4>
-				<p>While our system is learning, it makes patterns based upon the structure of the sentences it looks at. It uses those patterns to try to find more facts. Your annotations will help our system learn which patterns are good, and which are bad. Consider this sentence:</p>
-				<blockquote>Zambian President <span class="entity">Levy Mwanawasa</span> has admitted the challenge <span class="entity">Zambia</span> faces in choosing between the Southern African Development Community (SADC) and the Common Market for Eastern and Southern Africa (COMESA) , according Sunday Mail.</blockquote>
-				<p>Following the above logic, the relation <span class="relation-instance">Levy Mwanawasa <em>has nationality</em> Zambia</span> is true, but is our system using a good pattern figure that out? Our system thinks that the second mention of Zambia is the one that it should use to make a pattern. If we removed "Zambian President" from the beginning of this sentence, would you still know that Levy Mwanawasa was Zambian only from reading this sentence? No.</p>
-				<p>In this circumstance, we would say that the fact is expressed, but the pattern is bad. </p>
-				<p><a href="/distant_supervision1/task" class="btn btn-primary">Continue</a></p>
+				<h3>Types of Facts</h3>
+				<p>In this experiment, we are only looking at a few types of facts. All of the facts involve relationships between a person and a place.</p>
+				<div class="row">
+					<div class="col-md-4">
+						<h5 class="underlined">Nationality</h5>
+						<p><strong>Definition:</strong> A country that this person is a citizen of. Note: A person can have citizenship in multiple countries.</p>
+					</div>
+					<div class="col-md-4">
+						<h5 class="underlined">Was Born In</h5>
+						<p><strong>Definition:</strong> The place that this person was born in. This can be a town, city, state, country, etc.</p>
+					</div>
+					<div class="col-md-4">
+						<h5 class="underlined">Has Lived In</h5>
+						<p><strong>Definition:</strong> A place that this person has lived in. Much like "Was born in", this can be a town, city, state, country, etc.</p>
+					</div>
+				</div>
+				<p><a href="/distant_supervision1/tutorial-2" class="btn btn-primary">Doing the Task</a></p>
 			</div>
 		</div>
 	</div>

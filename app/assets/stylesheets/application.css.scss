@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 	letter-spacing: -.01em;
+
+	&.underlined{
+		border-bottom:1px solid #ccc;
+	}
 }
 
 .red {
@@ -41,6 +45,12 @@ h1, h2, h3, h4, h5, h6 {
 .green {
 	color: #579949;
 }
+
+.text-underline {
+	text-decoration: underline;
+}
+
+
 
 a {
 	color:$link-blue;
@@ -120,14 +130,8 @@ a {
 
 }
 
-p.q {
-	margin-bottom: 3px;
-	font-weight: bolder;
-}
-
-.infoheader {
-	height: 100%;
-	
+.tiny {
+	font-size:80%;
 }
 
 .header {
@@ -183,12 +187,17 @@ ol.relation-instances {
 		margin-bottom: 10px;
 
 		.row {
-			// display:inline-block;
 			margin-left:0px;
 			margin-right:0px;
-			// width:100%;
 		}
 	}	
+}
+
+.sentence {
+	span.entity {
+		font-weight: bold;
+		cursor: default;
+	}
 }
 
 
@@ -209,17 +218,7 @@ Distant Supervision Experiments
 	}
 
 
-	.sentence {
-		span.extent-hover {
-			background:blue;
-			color:#fff;
-			
-		}
 
-		span.entity {
-			font-weight: bold;
-		}
-	}
 
 
 	.darker {
