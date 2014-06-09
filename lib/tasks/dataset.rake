@@ -45,5 +45,10 @@ namespace :dataset do
     end
 
   end
+
+  #Exports the results of the experiment for given dataset
+  task :export_results, [:dataset] => :environment do |task, args|
+
+  end
 end
 

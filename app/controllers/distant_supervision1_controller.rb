@@ -5,8 +5,15 @@ class DistantSupervision1Controller < ApplicationController
 
   def task
     @current_sentence ||= get_sentence(current_user)
-    @target_route = "/distant_supervision1/update"
-  	render template: "layouts/distant_supervision_experiment"
+
+    if(!@current_sentence.nil?)
+      @target_route = "/distant_supervision1/update"
+      render template: "layouts/distant_supervision_experiment"
+    else
+      #completed with the task
+      redirect_to action: "thank_you"
+    end
+    
   end
 
   def update
@@ -64,10 +71,11 @@ class DistantSupervision1Controller < ApplicationController
   def tutorial2
   end
 
-  def tutorial3
+  def tutorial1
   end
 
-  def tutorial1
+  def thank_you
+    
   end
 
   private 
