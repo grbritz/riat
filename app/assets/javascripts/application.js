@@ -24,6 +24,7 @@ $(document).ready(function(){
 				$(HTML_NAMESPACE + " .sentence").html(sentenceToSpans(sentence));
 				
 				$(HTML_NAMESPACE + " .extent-hover").hover(function(){
+					console.log("hover")
 					sentTokSpansForEntity($(this)).forEach(function(ele){
 						ele.addClass("entity");
 					});

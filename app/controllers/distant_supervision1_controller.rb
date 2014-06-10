@@ -65,6 +65,8 @@ class DistantSupervision1Controller < ApplicationController
     render 'distant_supervision1/tutorial1'
   end
 
+  def tutorial3
+  end
   def tutorial2
   end
 

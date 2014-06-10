@@ -179,9 +179,9 @@ span.entity {
 }
 
 span.relation-instance {
-	&:before, &:after {
-		content: "\""
-	}
+	// &:before, &:after {
+	// 	content: "\""
+	// }
 
 	font-variant: small-caps;
 	font-weight:500;
