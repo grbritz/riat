@@ -41,8 +41,6 @@ $(document).ready(function(){
 
 				function textToTokSpans(text, charStart) {
 					var charcount = (charStart) ? charStart : 0;
-					console.log();
-
 					return text.split(/([\ .,;:()'])/g).map(function(tok) {
 						var obj = {
 							range : charcount + "-" + (charcount+tok.length),
