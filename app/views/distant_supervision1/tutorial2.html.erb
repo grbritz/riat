@@ -1,19 +1,23 @@
 <div class="section">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-8">
 				<h1>Doing the Task</h1>
 				<h4>Are the facts present?</h4>
 				<p>Consider the following sentence:</p>
 
-				<blockquote class="sentence"><span class="entity">Bill Clinton</span>, former <span class="entity">U.S.</span> President, spoke at a conference on national debt last week.</blockquote>
-				<p>I've marked the two entities we care about in this text. In this case, we want to know if the fact <span class="relation-instance">Bill Clinton <em>has nationality</em> U.S.</span> is expressed. Since the sentence says that Bill Clinton was a former U.S. president, we can infer that he must have the nationality of United States. So we would say that this sentence <em>expresses</em> this fact. </p>
-
+				<blockquote class="sentence"><span class="entity">Bill Clinton</span>, former <span class="entity">U.S.</span> President, spoke at a U.S. conference on national debt last week.</blockquote>
+				<p>We've marked the two entities we care about in this text. In this case, we want to know if the fact <span class="relation-instance">Bill Clinton <em>has nationality</em> U.S.</span> is expressed. Since the sentence says that Bill Clinton was a former U.S. president, we can infer that he must have the nationality of United States. So we would say that this sentence <em>expresses</em> this fact. </p>
+				<p><strong>Note:</strong> Some sentences have multiple mentions of the entities we are interested in. Notice how <em>'U.S'</em> is in the sentence twice. The first mention of U.S. was what we were using. When you are doing annotations, if you see multiple facts with the same entity, they are likely from different parts of the sentence. Hover over them with your mouse to see which is which.</p>
+				<p><strong>Note:</strong> You might find spelling variations of the same entity, e.g. American vs U.S., or New York vs New Yorker. We consider all of those forms to be the equivalent for the purposes of this experiment.</p>
 				<h4>Is the Pattern Good?</h4>
 				<p>While our system is learning, it makes patterns based upon the structure of the sentences it looks at. It uses those patterns to try to find more facts. Your annotations will help our system learn which patterns are good, and which are bad. Consider this sentence:</p>
 				<blockquote class="sentence">Zambian President <span class="entity">Levy Mwanawasa</span> has admitted the challenge <span class="entity">Zambia</span> faces in choosing between the Southern African Development Community (SADC) and the Common Market for Eastern and Southern Africa (COMESA) , according Sunday Mail.</blockquote>
 				<p>Following the above logic, the relation <span class="relation-instance">Levy Mwanawasa <em>has nationality</em> Zambia</span> is true, but is our system using a good pattern figure that out? Our system thinks that the second mention of Zambia is the one that it should use to make a pattern. If we removed "Zambian President" from the beginning of this sentence, would you still know that Levy Mwanawasa was Zambian only from reading this sentence? No. In this circumstance, we would say that the fact is expressed, but the <em>pattern</em> is bad. </p>
-				<p><a href="/distant_supervision1/task" class="btn btn-primary">Complete the Task</a></p>
+				<p><strong>Note:</strong> When doing your annotations, it is optional for you to label how good the pattern is. If you aren't sure, just skip it and focus on if facts are being expressed.</p>
+				<p>
+				<a href="/distant_supervision1/tutorial1" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>
+				<a href="/distant_supervision1/task" class="btn btn-primary">Complete the Task <span class="glyphicon glyphicon-arrow-right"></span></a></p>
 			</div>
 		</div>
 	</div>

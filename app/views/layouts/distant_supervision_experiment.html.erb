@@ -1,10 +1,12 @@
 <div class="container" id="distant-supervision-experiment">
 	<div class="row" style="height:50px"></div>
+	
 	<div class="row">
 		<div class="col-md-12">
+			
 			<blockquote class="sentence"><%= @current_sentence.sentence %></blockquote>
 			<%= form_tag(@target_route, :method => :post) do %>
-			<h3>Does the sentence express the following facts?</h3>
+			<h3>Q<%= num_completed(current_user) + 1 %>: Does the sentence express the following facts?</h3>
 			<h4 class="subheader"><small>* Hover over entities to see where they are located in the sentence</small></h4>
 			<%= render 'shared/flash_message' %>
 			<div class="row column-headings">
@@ -12,10 +14,10 @@
 					<h5>Fact Instance</h5>
 				</div>
 				<div class="col-md-4">
-					<h5>Is it Expressed?</h5>
+					<h5>Is it Expressed? <span class="tiny text-danger">required</span></h5>
 				</div>
 				<div class="col-md-2">
-					<h5>Is a good pattern?</h5>
+					<h5>Is a bad pattern?</h5>
 				</div>
 			</div>
 			<hr />
@@ -47,11 +49,8 @@
 						</div>
 						<div class="col-md-2">
 							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-primary" for='<%= "is_good_pattern_".concat(rel.id.to_s).concat("_1") %>'>
-									<%= radio_button_tag("is_good_pattern[".concat(rel.id.to_s).concat("]"), 1) %> Yes
-								</label>
-								<label class="btn btn-primary" for='<%= "is_good_pattern_".concat(rel.id.to_s).concat("_0") %>'>
-									<%= radio_button_tag("is_good_pattern[".concat(rel.id.to_s).concat("]"), 0) %> No
+								<label class="btn btn-primary">
+									<%= check_box_tag("is_bad_pattern[".concat(rel.id.to_s).concat("]"), 1) %> Yes
 								</label>
 							</div>
 						</div>
@@ -61,10 +60,18 @@
 			</ol>
 		</div>
 		<div class="row">
-			<div class="col-md-2">
-				<input type="submit" class="btn btn-primary" value="Submit" />
+			<div class="col-md-4">
+				<a href="/distant_supervision1/tutorial2" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left"></span> Back to Tutorial</a>
+				<button type="submit" class="btn btn-primary">Next Sentence <span class="glyphicon glyphicon-arrow-right"></span></button>
 			</div>
 		</div>
+		<br>
+		<div class="progress">
+			  <div class="progress-bar" role="progressbar" aria-valuenow="<%= num_completed(current_user) %>" aria-valuemin="0" aria-valuemax="<%= total_sentences %>" style="width: <%= get_progress(current_user) %>%">
+			    <%= get_progress(current_user) %>%
+			  </div>
+			</div>
 		<% end %>
 	</div>
+	
 </div>

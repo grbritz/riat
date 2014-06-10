@@ -5,7 +5,6 @@ class DistantSupervision1Controller < ApplicationController
 
   def task
     @current_sentence ||= get_sentence(current_user)
-
     if(!@current_sentence.nil?)
       @target_route = "/distant_supervision1/update"
       render template: "layouts/distant_supervision_experiment"
@@ -32,10 +31,10 @@ class DistantSupervision1Controller < ApplicationController
     end
 
     #is_good_pattern is optional
-    if(!params[:is_good_pattern].nil?)
-      params[:is_good_pattern].each do |relID, isGoodPattern|
+    if(!params[:is_bad_pattern].nil?)
+      params[:is_bad_pattern].each do |relID, is_bad_pattern|
         annIndex = annParams.find_index{|ele| ele[:relation_instance_id] == relID}
-        annParams[annIndex].merge!({is_good_pattern: isGoodPattern})
+        annParams[annIndex].merge!({is_bad_pattern: is_bad_pattern})
       end
     end
 
@@ -51,12 +50,10 @@ class DistantSupervision1Controller < ApplicationController
     end
 
     if(allGood)
-
       @annotations.each do |ann|
         ann.save()
       end
       @current_sentence.complete_for(current_user)
-      @current_sentence = get_sentence(current_user)
       redirect_to action: 'task'
     else
       flash.now[:message] = {display_type: "danger", message: "You must have a reason for choosing 'Not sure' on an annotation"}

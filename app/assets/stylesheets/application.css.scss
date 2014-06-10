@@ -195,8 +195,10 @@ ol.relation-instances {
 
 .sentence {
 	span.entity {
-		font-weight: bold;
 		cursor: default;
+		background-color: $link-blue;
+		color:#fff;
+		text-decoration: none;
 	}
 }
 

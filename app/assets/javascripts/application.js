@@ -11,9 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require_tree .
 $(document).ready(function(){
@@ -38,17 +36,19 @@ $(document).ready(function(){
 				function sentenceToSpans(sentence) {
 					return textToTokSpans(sentence).map(function(tokObj) {
 						return '<span data-range="'+ tokObj.range +'">'+tokObj.tok + '</span>';
-					}).join(" ");
+					});
 				}
 
 				function textToTokSpans(text, charStart) {
 					var charcount = (charStart) ? charStart : 0;
-					return text.split(/[\ .,;:()']/).map(function(tok) {
+					console.log();
+
+					return text.split(/([\ .,;:()'])/g).map(function(tok) {
 						var obj = {
 							range : charcount + "-" + (charcount+tok.length),
 							tok : tok
 						};
-						charcount += tok.length + 1;
+						charcount += tok.length;
 						return obj;
 					});
 				}
@@ -67,11 +67,6 @@ $(document).ready(function(){
 					
 					var group = $(this).closest(".toggle-element");
 					var eleToToggle = $(HTML_NAMESPACE + " ." + group.data("toggle_show"));
-
-					console.log("Checked Ele:");
-					console.log(group.find("input:checked"));
-					console.log("Radio val: " + group.find("input:checked").val());
-
 					if(group.find("input:checked").val() == group.data("toggle_value")) {
 						eleToToggle.removeClass("hide");
 					}
