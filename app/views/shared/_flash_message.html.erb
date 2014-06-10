@@ -1,7 +1,7 @@
 <% if (flash[:message]) %>
 <div id="flash_message" class="alert bg-<%= flash[:message][:display_type] %>">
-  <div>
-    <strong>An error has encountered:</strong> <%= flash[:message][:message] %>
+  <div> 
+  	<%= flash[:message][:message] %>
   </div>
 </div>
 <% end %>

@@ -179,12 +179,30 @@ span.entity {
 }
 
 span.relation-instance {
-	// &:before, &:after {
-	// 	content: "\""
-	// }
-
 	font-variant: small-caps;
 	font-weight:500;
+}
+
+span.small-caps{
+	font-variant: small-caps;
+	font-size: 115%;
+}
+
+.btn-group {
+	.btn-primary {
+			// background-color: #3071a9;
+			background-color: rgba(66, 139, 202, 0.6);
+			border-color: #CBDCE7;
+
+		&.active, &:hover {
+			background-color: rgba(66, 139, 202, 1);
+			// border-color: rgba(53, 126, 189, 1);
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			
+		}
+
+	}
 }
 
 ol.relation-instances {
