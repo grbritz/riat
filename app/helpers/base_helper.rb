@@ -6,10 +6,14 @@ module BaseHelper
 	#Gets the current sentence a user should annotate
 	def get_sentence(user)
 		sentence = session[:current_sentence].nil? ? new_sentence(user) : Sentence.includes("relation_instances").find(session[:current_sentence])
-		if(sentence.is_completed?(user))
-			sentence = new_sentence(user)
+		if(!sentence.nil?)
+			if(sentence.is_completed?(user))
+				sentence = new_sentence(user)
+			end
+			session[:current_sentence] = sentence.to_param
+		else
+			session[:current_sentence] = nil
 		end
-		session[:current_sentence] = sentence.to_param
 		return sentence
 	end
 
