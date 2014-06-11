@@ -3,9 +3,9 @@ RIAT uses humans to annotate relational instances for the purposes of evaluating
 
 ### Setup
 Clone the repo and run the following commands to get setup:
-rake db:create
-rake db:migrate
-rake dataset:import_existing
+    rake db:create
+    rake db:migrate
+    rake dataset:import_existing
 
 The first two commands will setup the database and schema. The last will import any existing datasets into the database with the sentences and relation instances used with them. It will not import annotations from previous experiments.
 
