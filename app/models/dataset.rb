@@ -12,7 +12,7 @@ class Dataset < ActiveRecord::Base
 		sentences = sentences.map do |sent|
 			instances = sent.relation_instances.map do |rel_inst|
 				annotations_summary = rel_inst.summarize_annotations
-				rel_inst.merge({annotations: rel_inst.annotations, annotations_summary: annotations_summary})
+				rel_inst.serializable_hash.merge({annotations: rel_inst.annotations, annotations_summary: annotations_summary})
 			end
 			{sentence_id: sent.sentence_id, sentence: sent.sentence, relation_instances: instances}
 		end
