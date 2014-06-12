@@ -54,7 +54,7 @@ namespace :dataset do
     ds = Dataset.find_by(name: args[:dataset].underscore)
     results = ds.get_results
     path = Rails.root.join("datasets", ds.name, "export").to_s + "/results.json"
-    IO.binwrite(path, results.to_json)
+    IO.write(path, results.to_json)
     p "Wrote results to #{path}"
   end
 end
