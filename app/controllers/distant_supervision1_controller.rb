@@ -1,6 +1,5 @@
 class DistantSupervision1Controller < ApplicationController
   include DistantSupervision1Helper
-
   before_filter :require_logged_in
 
   def task

@@ -49,12 +49,32 @@ namespace :dataset do
 
   end
 
-  #Exports the results of the experiment for given dataset
-  task :export_results, [:dataset] => :environment do |task, args|
+  # Exports the results of the experiment for given dataset
+  task :annotation_results, [:dataset, :format] => :environment do |task, args|
     ds = Dataset.find_by(name: args[:dataset].underscore)
-    results = ds.get_results
-    path = Rails.root.join("datasets", ds.name, "export").to_s + "/results.json"
-    IO.write(path, results.to_json)
+    path = Rails.root.join("datasets", ds.name, "export").to_s + "/annotation_results." + args[:format]
+    case args[:format]
+    when "json"
+      results = ds.annotation_results("hash").to_json
+    when "csv"
+      results = ds.annotation_results("csv")
+    end
+
+    IO.write(path, results)
+    p "Wrote results to #{path}"
+  end
+
+  task :user_completion_results, [:dataset, :format] => :environment do |task, args|
+    ds = Dataset.find_by(name: args[:dataset].underscore)
+    path = Rails.root.join("datasets", ds.name, "export").to_s + "/user_completion_results." + args[:format]
+    
+    case args[:format]
+    when "json"
+      results = ds.user_completion_results("hash").to_json
+    when "csv"
+      results = ds.user_completion_results("csv")
+    end
+    IO.write(path, results)
     p "Wrote results to #{path}"
   end
 end

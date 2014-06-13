@@ -25,4 +25,12 @@ Then run (assuming ;; was used as the delimeter for importing)
 You now will have the new dataset and its data ready to go. 
 
 ### Front End
-A basic controller will be generated for you when you create a new dataset, but currently it does not auto generate everything you will need. Look at the UI for distant_supervision1 for an example of how to set up the front end.
+When you create a new dataset, a controller skeleton will be generated for you. As this time, the generator does not automate much, but rather gives you a starting point for writing your own controllers. Tutorials and an annotation interface have been made for the distant_supervision1. You can use those as a starting point when running other distant supervision experiments. Common code related to user progress and displaying data is found in `base_helper`, and you should include that in your helper file for a new dataset.
+
+
+### Exporting from remote
+After running an experiment, you'll likely want to pull the data down for analysis or so that you can export it to another tool. Run the following commands to do this (note, will drop all data on your local setup)
+    
+    rake db:drop
+    PGUSER=`localuser` PGPASSWORD=`localpassword` heroku pg:pull `riat_production` `localdbname` --app `herokuappname`
+

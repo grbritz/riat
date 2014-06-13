@@ -1,12 +1,11 @@
 class RelationInstance < ActiveRecord::Base
-	belongs_to :sentence, foreign_key: [:dataset_id, :sentence_id]
+	belongs_to :sentence, foreign_key: [:sentence_id, :dataset_id]
 	belongs_to :dataset
 	has_many :annotations, dependent: :destroy, class_name: "Annotation"
 
 	# Summarizes the annotation results for this RelationInstance
 	def summarize_annotations
-		
-		result = {is_expressed: 0, is_not_expressed: 0, not_sure_expressed: 0, is_bad_pattern: 0}
+		result = {is_expressed: 0, is_not_expressed: 0, not_sure_expressed: 0, is_bad_pattern: 0, total_anns: self.annotations.count}
 		self.annotations.each do |ann|
 			case ann.annotation
 			when 0

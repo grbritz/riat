@@ -190,13 +190,11 @@ span.small-caps{
 
 .btn-group {
 	.btn-primary {
-			// background-color: #3071a9;
 			background-color: rgba(66, 139, 202, 0.6);
 			border-color: #CBDCE7;
 
 		&.active, &:hover {
 			background-color: rgba(66, 139, 202, 1);
-			// border-color: rgba(53, 126, 189, 1);
 			-webkit-box-shadow: none;
 			box-shadow: none;
 			
