@@ -3,7 +3,6 @@ RIAT uses humans to annotate relational instances for the purposes of evaluating
 
 ### Setup
 Clone the repo and run the following commands to get setup:
-
     rake db:create
     rake db:migrate
     rake dataset:import_existing
